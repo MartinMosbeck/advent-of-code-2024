@@ -13,7 +13,7 @@ programming language.
   (input.txt) is expected to be placed in each root folder.
 
 - For copyright reasons the input files are not included in the folders (see
-  [AoC copyright info](https://adventofcode.com/about#faq_copying).
+  [AoC copyright info](https://adventofcode.com/about#faq_copying)).
 
 - Which of both files is used is controlled by a boolean USE_EXAMPLE in each
   main.rs (true -> use example.txt, false -> use input.txt).

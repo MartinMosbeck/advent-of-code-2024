@@ -1,6 +1,5 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-use regex::Regex;
+pub mod field;
+use crate::field::Field;
 
 fn get_filename() -> String {
     if USE_EXAMPLE {
@@ -9,15 +8,18 @@ fn get_filename() -> String {
     String::from("input.txt")
 }
 
-fn generate_buf_reader() -> BufReader<File> {
-    let filename: String = get_filename();
-    let file = File::open(filename).expect("File not openable");
-
-    BufReader::new(file)
-}
-
-const USE_EXAMPLE: bool = true;
+const USE_EXAMPLE: bool = false;
 
 fn main() {
-    let mut file_reader = generate_buf_reader();
+    let mut field = Field::from_file(get_filename());
+    field.setup_find_verbosity( if USE_EXAMPLE { true } else { false } );
+
+    let pattern = r"XMAS|SAMX";
+    let num_occurrences = field.find_occurrences(pattern);
+    println!("Found XMAS {num_occurrences}");
+
+    println!("------------------------------------------------------------");
+
+    let num_occurrences = field.find_x_mas();
+    println!("Found X-MAS {num_occurrences}");
 }

@@ -3,7 +3,9 @@
 My [Advent of Code 2024](https://adventofcode.com/2024/) solutions in the Rust
 programming language.
 
-**NOTE:** This code is by no means perfect, I am using AoC-2024 to learn Rust :)
+- This code is by no means perfect, I am using AoC-2024 to learn Rust :)
+- Each of the exercises is done separately with no common code in common
+  components.
 
 ## Usage
 
